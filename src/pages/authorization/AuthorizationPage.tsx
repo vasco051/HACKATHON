@@ -1,19 +1,32 @@
 import { Button, Flex, Form, Input, Typography } from 'antd';
-import { Link } from 'react-router-dom';
+import { observer } from 'mobx-react-lite';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { PageWrapper } from '../../components/layouts/page-wrapper/PageWrapper';
 import { staticLinks } from '../../config/staticLinks';
+import { useStore } from '../../hooks/useStore';
+import { TSignIn } from '../../types/entities/TSignIn';
 
 import { useStyles } from './styles.ts';
 
-const { Title, Text } = Typography;
 
-export const AuthorizationPage = () => {
+const {
+  Title,
+  Text
+} = Typography;
+
+export const AuthorizationPage = observer(() => {
   const { styles } = useStyles();
-  const [form] = Form.useForm();
+  const authStore = useStore().auth;
+  const navigate = useNavigate();
+  const [ form ] = Form.useForm();
 
-  const onFinish = (values: any) => {
-    console.log(values);
+  const onFinish = async (values: TSignIn) => {
+    const response = await authStore.signIn(values);
+
+    if (response.status === 200) {
+      navigate(staticLinks.main);
+    }
   };
 
   return (
@@ -64,4 +77,4 @@ export const AuthorizationPage = () => {
       </Flex>
     </PageWrapper>
   );
-};
+});

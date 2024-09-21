@@ -1,5 +1,8 @@
-import { ICalculateStore } from './store/ICalculateStore.ts';
+import { IAccountStore } from './store/IAccountStore';
+import { IAuthStore } from './store/IAuthStore.ts';
+
 
 export interface IStore {
-  calculate: ICalculateStore;
+  auth: IAuthStore;
+  account: IAccountStore;
 }
