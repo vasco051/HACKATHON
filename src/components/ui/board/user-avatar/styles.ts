@@ -6,23 +6,9 @@ export const useStyles = createStyles(({ css }) => ({
   `,
   badge: css`
     position: absolute;
-    top: -17px;
-    right: -8px;
+    top: -20px;
+    right: -10px;
     opacity: 1;
     z-index: 2;
-  `,
-  icon: css`
-    position: absolute;
-    bottom: -12px;
-    left: -7px;
-    width: 38px;
-    z-index: 1;
-  `,
-  text: css`
-    position: absolute;
-    top: 7px;
-    color: #fff;
-    font-weight: 500;
-    font-size: larger;
   `,
 }));

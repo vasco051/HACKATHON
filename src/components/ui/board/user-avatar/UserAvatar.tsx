@@ -1,11 +1,10 @@
 import { UserOutlined } from '@ant-design/icons';
-import { Avatar, Flex, Typography } from 'antd';
+import { Avatar } from 'antd';
 import { useStyles } from './styles.ts';
-import HeartIcon from '../../../../assets/images/heart.svg';
-import { TUser } from '../../../../types/entities/TUser.ts';
-import { UserPopover } from '../../user-popover/UserPopover.tsx';
 
-const { Text } = Typography;
+import { TUser } from '../../../../types/entities/TUser.ts';
+import { UserPopover } from '../user-popover/UserPopover.tsx';
+import { Health } from '../health/Health.tsx';
 
 interface IUserAvatar {
   user: TUser;
@@ -23,10 +22,7 @@ export const UserAvatar = ({ user, icon }: IUserAvatar) => {
         <Avatar size={80} icon={<UserOutlined />} />
       </UserPopover>
 
-      <Flex className={styles.icon} justify="center" align="center">
-        <img src={HeartIcon} alt="health" />
-        <Text className={styles.text}>{user.rating}</Text>
-      </Flex>
+      <Health value={20} />
     </div>
   );
 };

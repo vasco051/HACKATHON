@@ -1,21 +1,38 @@
 import { Progress } from 'antd';
 import { useEffect, useState } from 'react';
 
-export const Timer = () => {
-  const duration = 10000;
-  const [time, setTime] = useState(10);
+interface ITimerProps {
+  seconds: number;
+}
 
-  // const format = (value: number) => {
-  //   const
-  // };
-
-  const percent = (time / duration) * 100;
+export const Timer = ({seconds = 10}: ITimerProps) => {
+  const [duration, setDuration] = useState(seconds * 1000);
+  const percent = 100 - (duration / (seconds * 1000)) * 100;
 
   useEffect(() => {
-    setInterval(() => {
-      setTime((prev) => prev - 1);
-    }, 100);
-  }, [time]);
+    const interval = setInterval(() => {
+      setDuration(prev => {
+        if (prev <= 0) {
+          clearInterval(interval);
+          return 0;
+        }
 
-  return <Progress type="circle" percent={percent} />;
+        return prev - 10;
+      });
+    }, 10);
+
+    return () => clearInterval(interval);
+  }, [duration]);
+
+  const formatTime = () => {
+    const seconds = Math.floor(duration / 1000);
+    const milliseconds = Math.floor((duration % 1000) / 10);
+    return `${seconds}:${milliseconds}`
+  }
+
+  return <Progress type="circle" percent={percent} status="active" format={formatTime} strokeColor={{
+    '0%': '#00ff0b',
+    '50%': '#ffcc00',
+    '100%': '#ff4d4f',
+  }} />;
 };

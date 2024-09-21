@@ -122,20 +122,13 @@ export const Map = ({ categoryId }: TMapProps) => {
   };
 
   const getTargetPositionTarget = (index: number) => {
-    if (index % 3 == 0) {
-      return 'right';
-    } else {
-      return 'top';
-    }
+    return index % 3 == 0 ? 'right' : 'top';
   };
 
   const getTargetPositionSource = (index: number) => {
-    if (index % 3 == 1) {
-      return 'left';
-    } else {
-      return 'bottom';
-    }
+    return index % 3 == 1 ? 'left' : 'bottom';
   };
+
   return (
     <div className={styles.map}>
       <div className={styles.content}>

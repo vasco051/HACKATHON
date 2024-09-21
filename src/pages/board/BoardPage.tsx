@@ -21,7 +21,7 @@ export const BoardPage = () => {
         <Title>Ответьте на вопрос до истечения времени</Title>
         <Question />
       </Flex>
-      <Timer />
+      <Timer seconds={10} />
     </PageWrapper>
   );
 };

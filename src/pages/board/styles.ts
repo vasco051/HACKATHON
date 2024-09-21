@@ -2,6 +2,9 @@ import { createStyles } from 'antd-style';
 
 export const useStyles = createStyles(({ css }) => ({
   main: css`
+    max-width: 1560px;
+    width: 100%;
+    margin: 0 auto;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
