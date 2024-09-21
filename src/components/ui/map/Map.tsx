@@ -7,80 +7,103 @@ import { TCourse } from '../../../types/entities/TCourse';
 
 import styles from './styles.module.scss';
 
-
 const courses: TCourse[] = [
   {
     id: 1,
     name: 'Пираты 1',
-    description: 'Повседневная практика показывает, что синтетическое тестирование однозначно фиксирует необходимость системы массового участия.',
-    photoUrl: 'https://i.pinimg.com/564x/e1/e1/3a/e1e13a15e6ebbb045cc777e9c4bd81fb.jpg'
+    description:
+      'Повседневная практика показывает, что синтетическое тестирование однозначно фиксирует необходимость системы массового участия.',
+    photoUrl:
+      'https://i.pinimg.com/564x/e1/e1/3a/e1e13a15e6ebbb045cc777e9c4bd81fb.jpg',
   },
   {
     id: 2,
     name: 'Пираты 2',
-    description: 'Повседневная практика показывает, что синтетическое тестирование однозначно фиксирует необходимость системы массового участия.',
-    photoUrl: 'https://i.pinimg.com/564x/e1/e1/3a/e1e13a15e6ebbb045cc777e9c4bd81fb.jpg'
+    description:
+      'Повседневная практика показывает, что синтетическое тестирование однозначно фиксирует необходимость системы массового участия.',
+    photoUrl:
+      'https://i.pinimg.com/564x/e1/e1/3a/e1e13a15e6ebbb045cc777e9c4bd81fb.jpg',
   },
   {
     id: 3,
     name: 'Пираты 3',
-    description: 'Повседневная практика показывает, что синтетическое тестирование однозначно фиксирует необходимость системы массового участия.',
-    photoUrl: 'https://i.pinimg.com/564x/e1/e1/3a/e1e13a15e6ebbb045cc777e9c4bd81fb.jpg'
+    description:
+      'Повседневная практика показывает, что синтетическое тестирование однозначно фиксирует необходимость системы массового участия.',
+    photoUrl:
+      'https://i.pinimg.com/564x/e1/e1/3a/e1e13a15e6ebbb045cc777e9c4bd81fb.jpg',
   },
   {
     id: 4,
     name: 'Пираты 4',
-    description: 'Повседневная практика показывает, что синтетическое тестирование однозначно фиксирует необходимость системы массового участия.',
-    photoUrl: 'https://i.pinimg.com/564x/e1/e1/3a/e1e13a15e6ebbb045cc777e9c4bd81fb.jpg'
+    description:
+      'Повседневная практика показывает, что синтетическое тестирование однозначно фиксирует необходимость системы массового участия.',
+    photoUrl:
+      'https://i.pinimg.com/564x/e1/e1/3a/e1e13a15e6ebbb045cc777e9c4bd81fb.jpg',
   },
   {
-    id: 1,
+    id: 5,
     name: 'Пираты 1',
-    description: 'Повседневная практика показывает, что синтетическое тестирование однозначно фиксирует необходимость системы массового участия.',
-    photoUrl: 'https://i.pinimg.com/564x/e1/e1/3a/e1e13a15e6ebbb045cc777e9c4bd81fb.jpg'
+    description:
+      'Повседневная практика показывает, что синтетическое тестирование однозначно фиксирует необходимость системы массового участия.',
+    photoUrl:
+      'https://i.pinimg.com/564x/e1/e1/3a/e1e13a15e6ebbb045cc777e9c4bd81fb.jpg',
   },
   {
-    id: 2,
+    id: 6,
     name: 'Пираты 2',
-    description: 'Повседневная практика показывает, что синтетическое тестирование однозначно фиксирует необходимость системы массового участия.',
-    photoUrl: 'https://i.pinimg.com/564x/e1/e1/3a/e1e13a15e6ebbb045cc777e9c4bd81fb.jpg'
+    description:
+      'Повседневная практика показывает, что синтетическое тестирование однозначно фиксирует необходимость системы массового участия.',
+    photoUrl:
+      'https://i.pinimg.com/564x/e1/e1/3a/e1e13a15e6ebbb045cc777e9c4bd81fb.jpg',
   },
   {
-    id: 3,
+    id: 7,
     name: 'Пираты 3',
-    description: 'Повседневная практика показывает, что синтетическое тестирование однозначно фиксирует необходимость системы массового участия.',
-    photoUrl: 'https://i.pinimg.com/564x/e1/e1/3a/e1e13a15e6ebbb045cc777e9c4bd81fb.jpg'
+    description:
+      'Повседневная практика показывает, что синтетическое тестирование однозначно фиксирует необходимость системы массового участия.',
+    photoUrl:
+      'https://i.pinimg.com/564x/e1/e1/3a/e1e13a15e6ebbb045cc777e9c4bd81fb.jpg',
   },
   {
-    id: 4,
+    id: 8,
     name: 'Пираты 4',
-    description: 'Повседневная практика показывает, что синтетическое тестирование однозначно фиксирует необходимость системы массового участия.',
-    photoUrl: 'https://i.pinimg.com/564x/e1/e1/3a/e1e13a15e6ebbb045cc777e9c4bd81fb.jpg'
+    description:
+      'Повседневная практика показывает, что синтетическое тестирование однозначно фиксирует необходимость системы массового участия.',
+    photoUrl:
+      'https://i.pinimg.com/564x/e1/e1/3a/e1e13a15e6ebbb045cc777e9c4bd81fb.jpg',
   },
   {
-    id: 1,
+    id: 9,
     name: 'Пираты 1',
-    description: 'Повседневная практика показывает, что синтетическое тестирование однозначно фиксирует необходимость системы массового участия.',
-    photoUrl: 'https://i.pinimg.com/564x/e1/e1/3a/e1e13a15e6ebbb045cc777e9c4bd81fb.jpg'
+    description:
+      'Повседневная практика показывает, что синтетическое тестирование однозначно фиксирует необходимость системы массового участия.',
+    photoUrl:
+      'https://i.pinimg.com/564x/e1/e1/3a/e1e13a15e6ebbb045cc777e9c4bd81fb.jpg',
   },
   {
-    id: 2,
+    id: 10,
     name: 'Пираты 2',
-    description: 'Повседневная практика показывает, что синтетическое тестирование однозначно фиксирует необходимость системы массового участия.',
-    photoUrl: 'https://i.pinimg.com/564x/e1/e1/3a/e1e13a15e6ebbb045cc777e9c4bd81fb.jpg'
+    description:
+      'Повседневная практика показывает, что синтетическое тестирование однозначно фиксирует необходимость системы массового участия.',
+    photoUrl:
+      'https://i.pinimg.com/564x/e1/e1/3a/e1e13a15e6ebbb045cc777e9c4bd81fb.jpg',
   },
   {
-    id: 3,
+    id: 11,
     name: 'Пираты 3',
-    description: 'Повседневная практика показывает, что синтетическое тестирование однозначно фиксирует необходимость системы массового участия.',
-    photoUrl: 'https://i.pinimg.com/564x/e1/e1/3a/e1e13a15e6ebbb045cc777e9c4bd81fb.jpg'
+    description:
+      'Повседневная практика показывает, что синтетическое тестирование однозначно фиксирует необходимость системы массового участия.',
+    photoUrl:
+      'https://i.pinimg.com/564x/e1/e1/3a/e1e13a15e6ebbb045cc777e9c4bd81fb.jpg',
   },
   {
-    id: 4,
+    id: 12,
     name: 'Пираты 4',
-    description: 'Повседневная практика показывает, что синтетическое тестирование однозначно фиксирует необходимость системы массового участия.',
-    photoUrl: 'https://i.pinimg.com/564x/e1/e1/3a/e1e13a15e6ebbb045cc777e9c4bd81fb.jpg'
-  }
+    description:
+      'Повседневная практика показывает, что синтетическое тестирование однозначно фиксирует необходимость системы массового участия.',
+    photoUrl:
+      'https://i.pinimg.com/564x/e1/e1/3a/e1e13a15e6ebbb045cc777e9c4bd81fb.jpg',
+  },
 ];
 
 export const Map = () => {
@@ -94,10 +117,29 @@ export const Map = () => {
     return `element-${index + 1}`;
   };
 
+  const getTargetPositionTarget = (index: number) => {
+    if (index % 3 == 0) {
+      return 'right';
+    } else {
+      return 'top';
+    }
+  };
+
+  const getTargetPositionSource = (index: number) => {
+    if (index % 3 == 1) {
+      return 'left';
+    } else {
+      return 'bottom';
+    }
+  };
   return (
     <div className={styles.map}>
       <div className={styles.content}>
-        <ArcherContainer strokeColor={colorPrimary} endMarker={false} strokeWidth={2}>
+        <ArcherContainer
+          strokeColor={colorPrimary}
+          endMarker={false}
+          strokeWidth={4}
+        >
           <div className={styles.tree}>
             {courses.map((course, index) => (
               <ArcherElement
@@ -106,13 +148,13 @@ export const Map = () => {
                 relations={[
                   {
                     targetId: getTargetId(index),
-                    targetAnchor: 'top',
-                    sourceAnchor: 'bottom'
-                  }
+                    targetAnchor: getTargetPositionTarget(index),
+                    sourceAnchor: getTargetPositionSource(index),
+                  },
                 ]}
               >
-                <div>
-                  <MapCard card={course} index={index}/>
+                <div className={styles.wrapper}>
+                  <MapCard card={course} index={index} />
                 </div>
               </ArcherElement>
             ))}

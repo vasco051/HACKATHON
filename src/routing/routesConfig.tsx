@@ -1,7 +1,8 @@
-import { staticLinks } from "../config/staticLinks.ts";
+import { staticLinks } from '../config/staticLinks.ts';
 import { AuthorizationPage } from '../pages/authorization/AuthorizationPage';
 import { RegistrationPage } from '../pages/registration/RegistrationPage';
 import { MainPage } from '../pages/main/MainPage';
+import { BoardPage } from '../pages/board/BoardPage.tsx';
 
 export const publicRoutes = [
   {

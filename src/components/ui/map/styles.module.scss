@@ -4,7 +4,7 @@
 }
 
 .content {
-  padding: 120px;
+  padding: 80px 120px;
   min-height: 100%;
   display: flex;
   align-items: center;
@@ -14,6 +14,20 @@
 .tree {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  align-items: flex-start;
+  gap: 150px;
 }
 
+.wrapper:nth-child(3n + 2) {
+  margin-left: 350px;
+}
+
+.wrapper:nth-child(3n) {
+  margin-right: 700px;
+  margin-left: 0;
+}
+
+.wrapper:nth-child(3n + 1) {
+  margin-left: 700px;
+  margin-right: 0;
+}

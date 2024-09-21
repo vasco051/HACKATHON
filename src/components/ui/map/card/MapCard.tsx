@@ -5,31 +5,29 @@ import { TCourse } from '../../../../types/entities/TCourse';
 
 import { useStyles } from './styles';
 
-
 type TMapCard = {
   card: TCourse;
-  index: number
-}
+  index: number;
+};
 
-export const MapCard = ({
-  card,
-  index
-}: TMapCard) => {
-  const {styles} = useStyles()
+export const MapCard = ({ card, index }: TMapCard) => {
+  const { styles } = useStyles();
   const navigate = useNavigate();
 
   const onClickCard = () => navigate(dynamicLinks.board(card.id));
 
-  const content = <>
-    <Card
-      hoverable
-      onClick={onClickCard}
-      style={{ width: 240 }}
-      cover={<img alt="example" src={card.photoUrl}/>}
-    >
-      <Card.Meta title={card.name} description={card.description}/>
-    </Card>
-  </>;
+  const content = (
+    <>
+      <Card
+        hoverable
+        onClick={onClickCard}
+        style={{ width: 240 }}
+        cover={<img alt="example" src={card.photoUrl} />}
+      >
+        <Card.Meta title={card.name} description={card.description} />
+      </Card>
+    </>
+  );
 
   return (
     <Popover content={content} overlayInnerStyle={{ padding: 0 }}>
