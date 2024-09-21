@@ -1,11 +1,20 @@
 import { staticLinks } from "../config/staticLinks.ts";
-import { MainPage } from "../pages/main/MainPage.tsx";
+import { AuthorizationPage } from '../pages/authorization/AuthorizationPage';
 import { PrivatePage } from "../pages/private/PrivatePage.tsx";
+import { RegistrationPage } from '../pages/registration/RegistrationPage';
 
 export const publicRoutes = [
   {
-    path: staticLinks.main,
-    element: <MainPage/>
+    path: '*',
+    element: <AuthorizationPage/>
+  },
+  {
+    path: staticLinks.authorization,
+    element: <AuthorizationPage/>
+  },
+  {
+    path: staticLinks.registration,
+    element: <RegistrationPage/>
   }
 ];
 

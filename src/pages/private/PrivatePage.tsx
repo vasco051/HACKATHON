@@ -3,7 +3,7 @@ import { PageWrapper } from "../../components/layouts/page-wrapper/PageWrapper.t
 export const PrivatePage = () => {
   return (
     <PageWrapper>
-      хуй
+      PrivatePage
     </PageWrapper>
   )
 }

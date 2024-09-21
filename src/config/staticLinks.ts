@@ -1,3 +1,5 @@
 export const staticLinks = {
-  main: '/'
+  main: '/',
+  authorization: '/authorization',
+  registration: '/registration'
 }
