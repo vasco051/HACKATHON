@@ -1,15 +1,19 @@
 import { makeAutoObservable } from 'mobx';
-
-import { CalculateStore } from './calculateStore.ts';
+import { IAccountStore } from '../types/store/IAccountStore';
+import { AccountStore } from './account';
+import { AuthStore } from './auth';
 
 import { IStore } from '../types/IStore.ts';
-import { ICalculateStore } from '../types/store/ICalculateStore.ts';
+import { IAuthStore } from '../types/store/IAuthStore.ts';
+
 
 class Store implements IStore {
-  calculate: ICalculateStore;
+  auth: IAuthStore;
+  account: IAccountStore;
 
   constructor() {
-    this.calculate = new CalculateStore();
+    this.auth = new AuthStore(this);
+    this.account = new AccountStore()
     makeAutoObservable(this);
   }
 }
