@@ -1,18 +1,18 @@
 import { Layout } from 'antd';
-import { cx } from "antd-style";
+import { cx } from 'antd-style';
 import { PropsWithChildren } from 'react';
 
-import { useStyles } from './styles.ts'
+import { useStyles } from './styles.ts';
 
 type TPageWrapperProps = PropsWithChildren & {
   contentClassName?: string;
 };
 
 export const PageWrapper = ({
-                              contentClassName,
-                              children,
-                            }: TPageWrapperProps) => {
-  const {styles} = useStyles()
+  contentClassName,
+  children,
+}: TPageWrapperProps) => {
+  const { styles } = useStyles();
 
   return (
     <Layout.Content>

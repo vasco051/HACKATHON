@@ -33,11 +33,11 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, State> {
           <Layout.Content>
             <Result
               style={{ height: '100%' }}
-              status='error'
-              title='Непредвиденная ошибка'
-              subTitle='Пожалуйста, свяжитесь с разработчиками и предоставьте им скриншот кода данной ошибки'
+              status="error"
+              title="Непредвиденная ошибка"
+              subTitle="Пожалуйста, свяжитесь с разработчиками и предоставьте им скриншот кода данной ошибки"
               extra={
-                <Flex vertical gap='large' align='center' justify='center'>
+                <Flex vertical gap="large" align="center" justify="center">
                   <Card
                     style={{
                       maxWidth: 600,

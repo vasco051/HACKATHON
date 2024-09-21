@@ -1,9 +1,5 @@
-import { PageWrapper } from "../../components/layouts/page-wrapper/PageWrapper.tsx";
+import { PageWrapper } from '../../components/layouts/page-wrapper/PageWrapper.tsx';
 
 export const PrivatePage = () => {
-  return (
-    <PageWrapper>
-      PrivatePage
-    </PageWrapper>
-  )
-}
+  return <PageWrapper>PrivatePage</PageWrapper>;
+};

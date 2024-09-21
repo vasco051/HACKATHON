@@ -1,5 +1,5 @@
-import { ICalculateStore } from "./store/ICalculateStore.ts";
+import { ICalculateStore } from './store/ICalculateStore.ts';
 
 export interface IStore {
-  calculate: ICalculateStore
+  calculate: ICalculateStore;
 }

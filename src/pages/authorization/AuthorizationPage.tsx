@@ -6,15 +6,11 @@ import { staticLinks } from '../../config/staticLinks';
 
 import { useStyles } from './styles.ts';
 
-
-const {
-  Title,
-  Text
-} = Typography;
+const { Title, Text } = Typography;
 
 export const AuthorizationPage = () => {
   const { styles } = useStyles();
-  const [ form ] = Form.useForm();
+  const [form] = Form.useForm();
 
   const onFinish = (values: any) => {
     console.log(values);
@@ -40,14 +36,19 @@ export const AuthorizationPage = () => {
             className={styles.form}
           >
             <Form.Item label="Логин" name="login">
-              <Input/>
+              <Input />
             </Form.Item>
 
             <Form.Item label="Пароль" name="password">
-              <Input/>
+              <Input />
             </Form.Item>
 
-            <Button htmlType="submit" type="primary" size="large" className={styles.button}>
+            <Button
+              htmlType="submit"
+              type="primary"
+              size="large"
+              className={styles.button}
+            >
               Войти
             </Button>
           </Form>
@@ -56,9 +57,7 @@ export const AuthorizationPage = () => {
             <Text>Нет аккаунта?</Text>
 
             <Link to={staticLinks.registration}>
-              <Button className={styles.button}>
-                Регистрация
-              </Button>
+              <Button className={styles.button}>Регистрация</Button>
             </Link>
           </Flex>
         </Flex>
