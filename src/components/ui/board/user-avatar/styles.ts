@@ -9,14 +9,14 @@ export const useStyles = createStyles(({ css }) => ({
     top: -17px;
     right: -8px;
     opacity: 1;
-    z-index: 10;
+    z-index: 2;
   `,
   icon: css`
     position: absolute;
     bottom: -12px;
     left: -7px;
     width: 38px;
-    z-index: 5;
+    z-index: 1;
   `,
   text: css`
     position: absolute;
