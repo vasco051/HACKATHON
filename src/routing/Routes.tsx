@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import { privateRoutes, publicRoutes } from "./routesConfig.tsx";
 
 const Routing = () => {
-  const isAuth = false;
+  const isAuth = true;
   const routes = isAuth ? privateRoutes : publicRoutes;
 
   return (
