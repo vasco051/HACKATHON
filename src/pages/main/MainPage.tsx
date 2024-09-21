@@ -3,13 +3,12 @@ import { Map } from '../../components/ui/map/Map';
 
 import { useStyles } from './styles.ts';
 
-
 export const MainPage = () => {
-  const { styles } = useStyles();
+  // const { styles } = useStyles();
 
   return (
     <PageWrapper>
-      <Map/>
+      <Map />
     </PageWrapper>
   );
 };

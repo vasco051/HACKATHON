@@ -25,6 +25,10 @@ export const publicRoutes = [
 
 export const privateRoutes = [
   {
+    path: '*',
+    element: <MainPage />,
+  },
+  {
     path: staticLinks.main,
     element: <MainPage />,
   },

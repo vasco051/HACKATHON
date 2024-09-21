@@ -1,9 +1,12 @@
 import { UserAvatar } from '../ui/user-avatar/UserAvatar.tsx';
 import { Flex } from 'antd';
+import { useStyles } from './styles.ts';
 
 export const UsersList = () => {
+  const { styles } = useStyles();
+
   return (
-    <Flex vertical gap={20}>
+    <Flex className={styles.list} vertical gap={20}>
       <UserAvatar />
       <UserAvatar />
       <UserAvatar />

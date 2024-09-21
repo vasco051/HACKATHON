@@ -1,4 +1,4 @@
-import { Progressbar } from '../ui/progressbar/Progressbar.tsx';
+import { Progressbar } from '../progressbar/Progressbar.tsx';
 import { Flex, Typography } from 'antd';
 import { useStyles } from './styles.ts';
 
