@@ -1,5 +1,5 @@
 import { Flex, Typography } from 'antd';
-import { Answer } from '../answer/Answer.tsx';
+import { Answer } from '../../answer/Answer.tsx';
 
 const { Title } = Typography;
 
