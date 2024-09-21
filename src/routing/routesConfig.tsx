@@ -1,5 +1,6 @@
 import { staticLinks } from '../config/staticLinks.ts';
 import { AuthorizationPage } from '../pages/authorization/AuthorizationPage';
+import { CategoryPage } from '../pages/category/CategoryPage';
 import { RegistrationPage } from '../pages/registration/RegistrationPage';
 import { MainPage } from '../pages/main/MainPage';
 import { BoardPage } from '../pages/board/BoardPage.tsx';
@@ -17,19 +18,23 @@ export const publicRoutes = [
     path: staticLinks.registration,
     element: <RegistrationPage />,
   },
-  {
-    path: staticLinks.board,
-    element: <BoardPage />,
-  },
 ];
 
 export const privateRoutes = [
   {
     path: '*',
-    element: <MainPage />,
+    element: <MainPage/>
   },
   {
     path: staticLinks.main,
-    element: <MainPage />,
+    element: <MainPage/>
   },
+  {
+    path: staticLinks.category,
+    element: <CategoryPage/>
+  },
+  {
+    path: staticLinks.courseBoard,
+    element: <BoardPage/>
+  }
 ];

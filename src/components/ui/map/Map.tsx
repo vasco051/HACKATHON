@@ -102,11 +102,15 @@ const courses: TCourse[] = [
     description:
       'Повседневная практика показывает, что синтетическое тестирование однозначно фиксирует необходимость системы массового участия.',
     photoUrl:
-      'https://i.pinimg.com/564x/e1/e1/3a/e1e13a15e6ebbb045cc777e9c4bd81fb.jpg',
-  },
+      'https://i.pinimg.com/564x/e1/e1/3a/e1e13a15e6ebbb045cc777e9c4bd81fb.jpg'
+  }
 ];
 
-export const Map = () => {
+type TMapProps = {
+  categoryId: string
+}
+
+export const Map = ({ categoryId }: TMapProps) => {
   const { colorPrimary } = theme.useToken().token;
 
   const getIdCard = (index: number) => {
@@ -154,7 +158,7 @@ export const Map = () => {
                 ]}
               >
                 <div className={styles.wrapper}>
-                  <MapCard card={course} index={index} />
+                  <MapCard card={course} categoryId={categoryId} index={index}/>
                 </div>
               </ArcherElement>
             ))}

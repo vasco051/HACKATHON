@@ -1,14 +1,16 @@
 import { PageWrapper } from '../../components/layouts/page-wrapper/PageWrapper.tsx';
-import { Map } from '../../components/ui/map/Map';
+import { CategoriesList } from '../../components/ui/category/_/CategoriesList';
 
-import { useStyles } from './styles.ts';
+import { useStyles } from './styles';
 
 export const MainPage = () => {
-  // const { styles } = useStyles();
+  const { styles } = useStyles();
 
   return (
     <PageWrapper>
-      <Map />
+      <div className={styles.wrapper}>
+        <CategoriesList/>
+      </div>
     </PageWrapper>
   );
 };

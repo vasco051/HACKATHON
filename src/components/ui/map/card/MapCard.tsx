@@ -8,13 +8,18 @@ import { useStyles } from './styles';
 type TMapCard = {
   card: TCourse;
   index: number;
+  categoryId: string | number;
 };
 
-export const MapCard = ({ card, index }: TMapCard) => {
+export const MapCard = ({
+  card,
+  categoryId,
+  index
+}: TMapCard) => {
   const { styles } = useStyles();
   const navigate = useNavigate();
 
-  const onClickCard = () => navigate(dynamicLinks.board(card.id));
+  const onClickCard = () => navigate(dynamicLinks.courseBoard(categoryId, card.id));
 
   const content = (
     <>

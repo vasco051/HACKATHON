@@ -1,3 +1,4 @@
 export const dynamicLinks = {
-  board: (id: number | string) => `/board/${id}`
+  category: (id: number | string) => `/category/${id}`,
+  courseBoard: (categoryId: number | string, courseId: string | number) => `/category/${categoryId}/course/${courseId}`
 }

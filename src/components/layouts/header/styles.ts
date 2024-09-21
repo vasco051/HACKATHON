@@ -8,5 +8,9 @@ export const useStyles = createStyles(({ css, token }) => ({
       max-height: 56px;
     }
   `,
-  wrapper: css``,
+  wrapper: css`
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+  `,
 }));
