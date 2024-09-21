@@ -1,4 +1,4 @@
-import { UserAvatar } from '../ui/user-avatar/UserAvatar.tsx';
+import { UserAvatar } from '../ui/board/user-avatar/UserAvatar.tsx';
 import { Flex } from 'antd';
 import { useStyles } from './styles.ts';
 

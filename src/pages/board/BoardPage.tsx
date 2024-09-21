@@ -3,9 +3,9 @@ import { useStyles } from './styles.ts';
 import { Flex, Typography } from 'antd';
 import { useState } from 'react';
 import { UsersList } from '../../components/users-list/UsersList.tsx';
-import { BoardProgress } from '../../components/ui/board-progress/BoardProgress.tsx';
-import { Question } from '../../components/ui/question/Question.tsx';
-import { RankBadge } from '../../components/ui/rank-badge/RankBadge.tsx';
+import { BoardProgress } from '../../components/ui/board/board-progress/BoardProgress.tsx';
+import { Question } from '../../components/ui/board/question/Question.tsx';
+import { Timer } from '../../components/ui/board/timer/Timer.tsx';
 
 const { Title } = Typography;
 
@@ -21,7 +21,7 @@ export const BoardPage = () => {
         <Title>Ответьте на вопрос до истечения времени</Title>
         <Question />
       </Flex>
-      <RankBadge score={0} />
+      <Timer />
     </PageWrapper>
   );
 };
