@@ -1,5 +1,6 @@
 export const staticLinks = {
   main: '/',
   authorization: '/authorization',
-  registration: '/registration'
-}
+  registration: '/registration',
+  board: '/board',
+};

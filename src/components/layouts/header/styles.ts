@@ -1,6 +1,6 @@
-import { createStyles } from "antd-style";
+import { createStyles } from 'antd-style';
 
-export const useStyles = createStyles(({css, token}) => ({
+export const useStyles = createStyles(({ css, token }) => ({
   header: css`
     border-bottom: 1px solid ${token.colorBorder};
 
@@ -8,7 +8,5 @@ export const useStyles = createStyles(({css, token}) => ({
       max-height: 56px;
     }
   `,
-  wrapper: css`
-
-  `
-}))
+  wrapper: css``,
+}));

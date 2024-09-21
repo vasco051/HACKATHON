@@ -1,10 +1,6 @@
 import { createStyles } from 'antd-style';
 
-
-export const useStyles = createStyles(({
-  css,
-  token
-}) => ({
+export const useStyles = createStyles(({ css, token }) => ({
   main: css`
     display: flex;
     align-items: center;
@@ -27,5 +23,5 @@ export const useStyles = createStyles(({
   `,
   button: css`
     width: 100%;
-  `
+  `,
 }));

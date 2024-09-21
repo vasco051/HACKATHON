@@ -1,7 +1,7 @@
 import { PropsWithChildren, useEffect } from 'react';
-import { ConfigProvider, theme } from "antd";
-import { StyleProvider } from "antd-style";
-import ru_RU from "antd/locale/ru_RU";
+import { ConfigProvider, theme } from 'antd';
+import { StyleProvider } from 'antd-style';
+import ru_RU from 'antd/locale/ru_RU';
 
 const colors = {
   white: '#FFF',
@@ -39,10 +39,10 @@ const lightTheme = {
       titleMarginBottom: 0,
       titleMarginTop: 0,
     },
-  }
-}
+  },
+};
 
-export const AppProviders = ({children}: PropsWithChildren) => {
+export const AppProviders = ({ children }: PropsWithChildren) => {
   useEffect(() => {
     const handleWindowSizeChange = () => {
       const vh = window.innerHeight * 0.01;
@@ -59,7 +59,10 @@ export const AppProviders = ({children}: PropsWithChildren) => {
 
   return (
     <StyleProvider>
-      <ConfigProvider locale={ru_RU} theme={{...theme.defaultConfig, ...lightTheme}}>
+      <ConfigProvider
+        locale={ru_RU}
+        theme={{ ...theme.defaultConfig, ...lightTheme }}
+      >
         {children}
       </ConfigProvider>
     </StyleProvider>

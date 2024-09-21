@@ -1,10 +1,10 @@
 import { PropsWithChildren } from 'react';
 
-import { Context } from "../../main.tsx";
+import { Context } from '../../main.tsx';
 
-import Store from "../../store/store.ts";
+import Store from '../../store/store.ts';
 
-export const ContextProvider = ({children}: PropsWithChildren) => {
+export const ContextProvider = ({ children }: PropsWithChildren) => {
   return (
     <Context.Provider
       value={{

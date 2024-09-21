@@ -1,6 +1,6 @@
 export interface ICalculateStore {
-  count: number
+  count: number;
 
-  increment: () => void
-  decrement: () => void
+  increment: () => void;
+  decrement: () => void;
 }

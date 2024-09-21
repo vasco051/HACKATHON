@@ -6,15 +6,11 @@ import { staticLinks } from '../../config/staticLinks';
 
 import { useStyles } from './styles.ts';
 
-
-const {
-  Title,
-  Text
-} = Typography;
+const { Title, Text } = Typography;
 
 export const RegistrationPage = () => {
   const { styles } = useStyles();
-  const [ form ] = Form.useForm();
+  const [form] = Form.useForm();
 
   const onFinish = (values: any) => {
     console.log(values);
@@ -29,7 +25,9 @@ export const RegistrationPage = () => {
               Регистрация
             </Title>
 
-            <Text type="secondary">Введите данные для регистрации аккаунта</Text>
+            <Text type="secondary">
+              Введите данные для регистрации аккаунта
+            </Text>
           </Flex>
 
           <Form
@@ -40,18 +38,23 @@ export const RegistrationPage = () => {
             className={styles.form}
           >
             <Form.Item label="Логин" name="login">
-              <Input/>
+              <Input />
             </Form.Item>
 
             <Form.Item label="Пароль" name="password">
-              <Input/>
+              <Input />
             </Form.Item>
 
             <Form.Item label="Никнейм" name="nickname">
-              <Input/>
+              <Input />
             </Form.Item>
 
-            <Button htmlType="submit" type="primary" size="large" className={styles.button}>
+            <Button
+              htmlType="submit"
+              type="primary"
+              size="large"
+              className={styles.button}
+            >
               Зарегистрироваться
             </Button>
           </Form>
@@ -60,9 +63,7 @@ export const RegistrationPage = () => {
             <Text>Есть аккаунт?</Text>
 
             <Link to={staticLinks.authorization}>
-              <Button className={styles.button}>
-                Авторизация
-              </Button>
+              <Button className={styles.button}>Авторизация</Button>
             </Link>
           </Flex>
         </Flex>
