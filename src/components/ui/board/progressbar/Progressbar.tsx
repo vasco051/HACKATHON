@@ -10,7 +10,7 @@ export const Progressbar = ({ questionNumber }: IBoardProgress) => {
   const [percent, setPercent] = useState(0);
 
   useEffect(() => {
-    const calculatedPercent = (questionNumber / totalQuestions) * 100;
+    const calculatedPercent = (questionNumber / totalQuestions) * 100 - 10;
     setPercent(calculatedPercent);
   }, [questionNumber]);
 

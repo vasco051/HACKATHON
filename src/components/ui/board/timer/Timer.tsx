@@ -7,7 +7,7 @@ interface ITimerProps {
   className?: string;
 }
 
-export const Timer = ({ seconds = 7, onFinish, className }: ITimerProps) => {
+export const Timer = ({ seconds = 6, onFinish, className }: ITimerProps) => {
   const [duration, setDuration] = useState(seconds * 1000);
   const percent = 100 - (duration / (seconds * 1000)) * 100;
 
