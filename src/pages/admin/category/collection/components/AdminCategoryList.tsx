@@ -55,10 +55,6 @@ export const AdminCategoryList = observer(() => {
     adminCategoryStore.fetchCategories()
   }, []);
 
-  const onDeleteCategory = () => {
-    console.log('delete')
-  }
-
   const onRow = (record: AnyObject) => {
     return {
       onClick: () => {
@@ -72,8 +68,8 @@ export const AdminCategoryList = observer(() => {
       onRow={onRow}
       pagination={false}
       loading={adminCategoryStore.isLoading}
-      dataSource={[...adminCategoryStore.categories]}
-      columns={columns(onDeleteCategory)}
+      dataSource={[ ...adminCategoryStore.categories ]}
+      columns={columns(adminCategoryStore.deleteCategory)}
     />
   )
 })

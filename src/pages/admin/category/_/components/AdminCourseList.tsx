@@ -75,10 +75,6 @@ export const AdminCourseList = observer(({categoryId}: TAdminCourseListProps) =>
     adminCourseStore.fetchCourses(categoryId)
   }, []);
 
-  const onDeleteCourse = () => {
-    console.log('delete')
-  }
-
   const onRow = (record: AnyObject) => {
     return {
       onClick: () => {
@@ -93,7 +89,7 @@ export const AdminCourseList = observer(({categoryId}: TAdminCourseListProps) =>
       pagination={false}
       loading={adminCourseStore.isLoading}
       dataSource={[...adminCourseStore.courses]}
-      columns={columns(onDeleteCourse)}
+      columns={columns(adminCourseStore.deleteCourse)}
     />
   )
 })

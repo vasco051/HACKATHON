@@ -43,29 +43,24 @@ export class AdminCourseStore implements IAdminCourseStore {
     this.setIsLoading(false);
   }
 
-  async createCourse(course: TAdminCourseCreate) {
+  async createCourse(categoryId: string | number, course: TAdminCourseCreate) {
     this.setIsLoading(true);
 
-    const response = await AdminCourseService.createCourse(course);
+    const response = await AdminCourseService.createCourse(categoryId, course);
 
     if ('data' in response) {
-      const newCourse = response.data.course;
-
-      this.setCourse(newCourse);
+      this.setCourse(response.data);
     }
 
     this.setIsLoading(false);
     return response;
   }
 
-  async deleteCourse(categoryId: string | number, courseId: string | number) {
-    const response = await AdminCourseService.deleteCourse(
-      categoryId,
-      courseId,
-    );
+  deleteCourse = async (courseId: string | number) => {
+    const response = await AdminCourseService.deleteCourse(courseId);
 
-    if (response.status === 200) {
+    if (response.status === 204) {
       this._courses.delete(+courseId);
     }
-  }
+  };
 }

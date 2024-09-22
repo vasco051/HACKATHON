@@ -1,32 +1,43 @@
-import { Button, Form, Input, InputNumber, message, Modal } from 'antd';
-import { observer } from 'mobx-react-lite';
-import { useStore } from '../../../../../../hooks/useStore';
 import { useState } from 'react';
-import { TAdminCourseCreate } from '../../../../../../types/entities/admin/TAdminCourse.ts';
+import { observer } from 'mobx-react-lite';
+import { Button, Form, Input, InputNumber, message, Modal } from 'antd';
+import { useParams } from 'react-router-dom';
+
+import { useStore } from '../../../../../../hooks/useStore';
 import { requiredValidation } from '../../../../../../config/validate.ts';
+
+import { TAdminCourseCreate } from '../../../../../../types/entities/admin/TAdminCourse.ts';
+
 import { useStyles } from './styles.ts';
+
 
 export const AdminCourseCreate = observer(() => {
   const adminCourseStore = useStore().adminCourse;
 
   const { styles } = useStyles();
+  const categoryId = useParams().category_id as string
 
-  const [isOpenModal, setIsOpenModal] = useState(false);
-  const [messageApi, contextHolder] = message.useMessage();
-  const [form] = Form.useForm();
+  const [ isOpenModal, setIsOpenModal ] = useState(false);
+  const [ messageApi, contextHolder ] = message.useMessage();
+  const [ form ] = Form.useForm();
   const onOpenModal = () => setIsOpenModal(true);
 
   const onCloseModal = () => setIsOpenModal(false);
 
-  const onFinish = async (values: TAdminCourseCreate) => {
-    const response = await adminCourseStore.createCourse(values);
+  const onFinish = async (course: TAdminCourseCreate) => {
+    const response = await adminCourseStore.createCourse(categoryId, course);
 
     if (response.status === 200) {
       onCloseModal();
 
       messageApi.open({
         type: 'success',
-        content: 'Категория создана успешно',
+        content: 'Курс создан успешно',
+      });
+    } else {
+      messageApi.open({
+        type: 'error',
+        content: 'Проверьте данные',
       });
     }
   };
@@ -36,6 +47,7 @@ export const AdminCourseCreate = observer(() => {
       Создать
     </Button>
   );
+
   return (
     <>
       {contextHolder}
@@ -74,22 +86,25 @@ export const AdminCourseCreate = observer(() => {
             name="description"
             label="Описание"
             required
-            rules={[requiredValidation]}
+            rules={[ requiredValidation ]}
           >
-            <Input.TextArea />
+            <Input.TextArea/>
           </Form.Item>
 
-          <Form.Item name="photoUrl" label="Ссылка на фото категории">
-            <Input placeholder="https://example.com" />
-          </Form.Item>
-
-          <Form.Item name="photoUrl" label="Ссылка на задний фон категории">
-            <Input placeholder="https://example.com" />
+          <Form.Item
+            name="photoUrl"
+            label="Ссылка на фото курса"
+            required
+            rules={[ requiredValidation ]}
+          >
+            <Input placeholder="https://example.com"/>
           </Form.Item>
 
           <Form.Item
             name="minRating"
             label="Минимальный рейтинг для начала курса"
+            required
+            rules={[requiredValidation]}
           >
             <InputNumber min={0} className={styles.field} />
           </Form.Item>
@@ -97,6 +112,8 @@ export const AdminCourseCreate = observer(() => {
           <Form.Item
             name="optimalRating"
             label="Рекомендуемый рейтинг для начала курса"
+            required
+            rules={[requiredValidation]}
           >
             <InputNumber min={0} className={styles.field} />
           </Form.Item>
