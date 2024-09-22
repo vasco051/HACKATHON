@@ -38,7 +38,7 @@ export const AccountPopover = ({account, menuItems, onLogout}: TAccountPopoverPr
     <Flex vertical onClick={onClose}>
       <Flex align='center' justify='space-between' className={styles.header}>
         <Flex vertical>
-          <Title level={5}>{account.nickname} <Text type='success'>(1233 pts)</Text></Title>
+          <Title level={5}>{account.nickname} <Text type='success'>({account.pts} pts)</Text></Title>
           <Text type='secondary'>{account.login}</Text>
         </Flex>
 
