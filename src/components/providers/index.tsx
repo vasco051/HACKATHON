@@ -21,19 +21,19 @@ const lightTheme = {
     colorBgContainer: colors.white,
     colorBorder: colors.border,
     colorBorderSecondary: colors.borderSecondary,
-    colorBgElevated: colors.light,
+    colorBgElevated: colors.white,
     colorBgBase: colors.white,
   },
   components: {
     Menu: {
-      itemBg: 'transparent',
+      itemBg: 'transparent'
     },
     Layout: {
       headerBg: colors.white,
       bodyBg: colors.white,
       footerBg: colors.white,
       headerHeight: 56,
-      headerPadding: 0,
+      headerPadding: 0
     },
     Typography: {
       titleMarginBottom: 0,

@@ -4,3 +4,9 @@ export type TAdminCategory = {
   description: string;
   photoUrl: string;
 }
+
+export type TAdminCategoryCreate = {
+  name: string;
+  description: string;
+  photoUrl: string;
+}

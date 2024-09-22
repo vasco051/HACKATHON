@@ -1,9 +1,10 @@
 import { makeAutoObservable, observable, values } from 'mobx';
 
-import AdminCategoryService from "../../api/rest/admin/AdminCategoryService.ts";
+import AdminCategoryService from '../../api/rest/admin/AdminCategoryService.ts';
 
-import { IAdminCategoryStore } from "../../types/store/admin/IAdminCategoryStore.ts";
-import { TAdminCategory } from "../../types/entities/admin/TAdminCategory.ts";
+import { IAdminCategoryStore } from '../../types/store/admin/IAdminCategoryStore.ts';
+import { TAdminCategory, TAdminCategoryCreate } from '../../types/entities/admin/TAdminCategory.ts';
+
 
 export class AdminCategoryStore implements IAdminCategoryStore {
   _categories = observable.map<number, TAdminCategory>();
@@ -40,11 +41,27 @@ export class AdminCategoryStore implements IAdminCategoryStore {
     this.setIsLoading(false);
   }
 
+  async createCategory(category: TAdminCategoryCreate) {
+    this.setIsLoading(true);
+
+    const response = await AdminCategoryService.createCategory(category);
+
+    if ('data' in response) {
+      const newCategory = response.data.category;
+
+      this.setCategory(newCategory);
+    }
+
+    this.setIsLoading(false);
+    return response;
+  }
+
+
   async deleteCategory(id: number | string) {
     const response = await AdminCategoryService.deleteCategory(id);
 
     if (response.status === 200) {
-      this._categories.delete(+id)
+      this._categories.delete(+id);
     }
   }
 }

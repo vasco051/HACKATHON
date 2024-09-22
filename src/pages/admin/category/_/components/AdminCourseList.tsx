@@ -3,7 +3,8 @@ import { observer } from "mobx-react-lite";
 import { DeleteOutlined } from "@ant-design/icons";
 import { Button, Table, TableProps } from "antd";
 import { AnyObject } from "antd/es/_util/type";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+import { dynamicLinks } from '../../../../../config/dynamicLinks';
 
 import { TAdminCourse } from "../../../../../types/entities/admin/TAdminCourse.ts";
 
@@ -81,7 +82,7 @@ export const AdminCourseList = observer(({categoryId}: TAdminCourseListProps) =>
   const onRow = (record: AnyObject) => {
     return {
       onClick: () => {
-        navigate(String(record.id));
+        navigate(dynamicLinks.adminCourse(categoryId, record.id));
       },
     };
   }
