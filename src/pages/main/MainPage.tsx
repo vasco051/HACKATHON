@@ -9,7 +9,7 @@ export const MainPage = () => {
   return (
     <PageWrapper>
       <div className={styles.wrapper}>
-        <CategoriesList/>
+        <CategoriesList />
       </div>
     </PageWrapper>
   );
