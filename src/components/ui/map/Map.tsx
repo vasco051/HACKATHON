@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { useEffect } from 'react';
+import { CSSProperties, useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
 import { theme } from 'antd';
 import { ArcherContainer, ArcherElement } from 'react-archer';
@@ -16,32 +16,23 @@ import {
 } from './utils.ts';
 
 import styles from './styles.module.scss';
+import { TCategory } from '../../../types/entities/TCategory.ts';
+import { TCourse } from '../../../types/entities/TCourse.ts';
 
 type TMapProps = {
-  categoryId: string;
-  image?: string;
+  category: TCategory;
+  courses: TCourse[];
 };
 
-export const Map = observer(({ categoryId, image }: TMapProps) => {
-  const store = useStore();
-  const courseStore = store.course;
-
+export const Map = observer(({ category, courses }: TMapProps) => {
   const { colorPrimary } = theme.useToken().token;
-  const id = useParams().category_id as string;
 
-  useEffect(() => {
-    courseStore.fetchCourses(id);
-    if (image) {
-      document.body.style.backgroundImage = `url(${image})`;
-    } else {
-      document.body.style.backgroundImage = `url(${defaultBg})`;
-    }
-
-    console.log(image);
-  }, []);
+  const mapStyles: CSSProperties = {
+    backgroundImage: `url(${category.backgroundUrl ?? defaultBg})`,
+  };
 
   return (
-    <div className={styles.map}>
+    <div className={styles.map} style={mapStyles}>
       <div className={styles.content}>
         <ArcherContainer
           strokeColor={colorPrimary}
@@ -49,7 +40,7 @@ export const Map = observer(({ categoryId, image }: TMapProps) => {
           strokeWidth={4}
         >
           <div className={styles.tree}>
-            {courseStore.courses.map((course, index) => (
+            {courses.map((course, index) => (
               <ArcherElement
                 id={getIdCard(index)}
                 key={course.id}
@@ -64,7 +55,7 @@ export const Map = observer(({ categoryId, image }: TMapProps) => {
                 <div className={styles.wrapper}>
                   <MapCard
                     card={course}
-                    categoryId={categoryId}
+                    categoryId={category.id}
                     index={index}
                   />
                 </div>

@@ -12,7 +12,6 @@ export const CategoriesList = observer(() => {
 
   useEffect(() => {
     categoriesStore.fetchCategories();
-    console.log(categoriesStore.background);
   }, []);
 
   return (

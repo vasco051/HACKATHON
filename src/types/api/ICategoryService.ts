@@ -1,5 +1,9 @@
 import { TCategory } from '../entities/TCategory';
 
 export type TFetchCategoriesResponse = {
-  categories: TCategory[]
-}
+  categories: TCategory[];
+};
+
+export type TFetchCategoryResponse = {
+  data: TCategory;
+};
