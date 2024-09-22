@@ -52,7 +52,6 @@ export class CategoryStore implements ICategoryStore {
     this._categories.clear();
 
     const response = await CategoryService.fetchCategory(id);
-    console.log(response.data);
 
     if ('data' in response) {
       this.setCurrentCategory(response.data);

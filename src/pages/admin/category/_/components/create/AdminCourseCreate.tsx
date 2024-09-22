@@ -19,7 +19,7 @@ export const AdminCourseCreate = observer(() => {
   const onCloseModal = () => setIsOpenModal(false);
 
   const onFinish = async (values: TAdminCourseCreate) => {
-    const response = await adminCourseStore(values);
+    const response = await adminCourseStore.createCourse(values);
 
     if (response.status === 200) {
       onCloseModal();

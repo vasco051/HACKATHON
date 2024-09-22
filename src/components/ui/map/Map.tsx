@@ -18,7 +18,7 @@ import { TCourse } from '../../../types/entities/TCourse.ts';
 
 type TMapProps = {
   category: TCategory;
-  courses: TCourse[];
+  courses: readonly TCourse[];
 };
 
 export const Map = observer(({ category, courses }: TMapProps) => {
