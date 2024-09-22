@@ -1,9 +1,12 @@
 import { makeAutoObservable, observable, values } from 'mobx';
 
-import AdminCourseService from "../../api/rest/admin/AdminCourseService.ts";
+import AdminCourseService from '../../api/rest/admin/AdminCourseService.ts';
 
-import { IAdminCourseStore } from "../../types/store/admin/IAdminCourseStore.ts";
-import { TAdminCourse } from "../../types/entities/admin/TAdminCourse.ts";
+import { IAdminCourseStore } from '../../types/store/admin/IAdminCourseStore.ts';
+import {
+  TAdminCourse,
+  TAdminCourseCreate,
+} from '../../types/entities/admin/TAdminCourse.ts';
 
 export class AdminCourseStore implements IAdminCourseStore {
   _courses = observable.map<number, TAdminCourse>();
@@ -32,7 +35,7 @@ export class AdminCourseStore implements IAdminCourseStore {
     const response = await AdminCourseService.fetchCourses(categoryId);
 
     if ('data' in response) {
-      response.data.courses.forEach(course => {
+      response.data.courses.forEach((course) => {
         this.setCourse(course);
       });
     }
@@ -40,11 +43,29 @@ export class AdminCourseStore implements IAdminCourseStore {
     this.setIsLoading(false);
   }
 
+  async createCourse(course: TAdminCourseCreate) {
+    this.setIsLoading(true);
+
+    const response = await AdminCourseService.createCourse(course);
+
+    if ('data' in response) {
+      const newCourse = response.data.course;
+
+      this.setCourse(newCourse);
+    }
+
+    this.setIsLoading(false);
+    return response;
+  }
+
   async deleteCourse(categoryId: string | number, courseId: string | number) {
-    const response = await AdminCourseService.deleteCourse(categoryId, courseId);
+    const response = await AdminCourseService.deleteCourse(
+      categoryId,
+      courseId,
+    );
 
     if (response.status === 200) {
-      this._courses.delete(+courseId)
+      this._courses.delete(+courseId);
     }
   }
 }

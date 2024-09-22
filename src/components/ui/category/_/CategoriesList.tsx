@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 import { useStore } from '../../../../hooks/useStore';
 import { CategoryCard } from '../card/CategoryCard';
 
-
 const { Title } = Typography;
 
 export const CategoriesList = observer(() => {
@@ -13,28 +12,26 @@ export const CategoriesList = observer(() => {
 
   useEffect(() => {
     categoriesStore.fetchCategories();
+    console.log(categoriesStore.background);
   }, []);
 
   return (
     <Flex vertical gap={48}>
       <Title>Список категорий</Title>
 
-      {categoriesStore.isLoading
-        ? (
-          <Flex justify="center">
-            <Spin/>
-          </Flex>
-        )
-        : (
-          <Row gutter={[ 24, 24 ]}>
-            {categoriesStore.categories.map(category => (
-              <Col span={12} key={category.id}>
-                <CategoryCard category={category}/>
-              </Col>
-            ))}
-          </Row>
-        )
-      }
+      {categoriesStore.isLoading ? (
+        <Flex justify="center">
+          <Spin />
+        </Flex>
+      ) : (
+        <Row gutter={[24, 24]}>
+          {categoriesStore.categories.map((category) => (
+            <Col span={12} key={category.id}>
+              <CategoryCard category={category} />
+            </Col>
+          ))}
+        </Row>
+      )}
     </Flex>
   );
 });

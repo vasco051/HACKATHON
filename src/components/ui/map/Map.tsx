@@ -1,30 +1,43 @@
-import { useParams } from "react-router-dom";
-import { useEffect } from "react";
-import { observer } from "mobx-react-lite";
+import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { observer } from 'mobx-react-lite';
 import { theme } from 'antd';
 import { ArcherContainer, ArcherElement } from 'react-archer';
+import defaultBg from '../../../assets/images/img_map-pattern.png';
 
-import { useStore } from "../../../hooks/useStore.ts";
+import { useStore } from '../../../hooks/useStore.ts';
 import { MapCard } from './card/MapCard';
 
-import { getIdCard, getTargetId, getTargetPositionSource, getTargetPositionTarget } from "./utils.ts";
+import {
+  getIdCard,
+  getTargetId,
+  getTargetPositionSource,
+  getTargetPositionTarget,
+} from './utils.ts';
 
 import styles from './styles.module.scss';
 
 type TMapProps = {
-  categoryId: string
-}
+  categoryId: string;
+  image?: string;
+};
 
-export const Map = observer(({categoryId}: TMapProps) => {
-  const store = useStore()
+export const Map = observer(({ categoryId, image }: TMapProps) => {
+  const store = useStore();
   const courseStore = store.course;
-  const categoryStore = store.category;
 
-  const {colorPrimary} = theme.useToken().token;
-  const id = useParams().category_id as string
+  const { colorPrimary } = theme.useToken().token;
+  const id = useParams().category_id as string;
 
   useEffect(() => {
-    courseStore.fetchCourses(id)
+    courseStore.fetchCourses(id);
+    if (image) {
+      document.body.style.backgroundImage = `url(${image})`;
+    } else {
+      document.body.style.backgroundImage = `url(${defaultBg})`;
+    }
+
+    console.log(image);
   }, []);
 
   return (
@@ -49,7 +62,11 @@ export const Map = observer(({categoryId}: TMapProps) => {
                 ]}
               >
                 <div className={styles.wrapper}>
-                  <MapCard card={course} categoryId={categoryId} index={index}/>
+                  <MapCard
+                    card={course}
+                    categoryId={categoryId}
+                    index={index}
+                  />
                 </div>
               </ArcherElement>
             ))}

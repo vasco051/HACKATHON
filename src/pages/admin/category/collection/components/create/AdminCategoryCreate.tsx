@@ -1,19 +1,16 @@
-import { Button, Form, Input, InputNumber, message, Modal, Typography } from 'antd';
+import { Button, Form, Input, message, Modal } from 'antd';
 import { observer } from 'mobx-react-lite';
 import { useState } from 'react';
 import { requiredValidation } from '../../../../../../config/validate';
 import { useStore } from '../../../../../../hooks/useStore';
 import { TAdminCourseCreate } from '../../../../../../types/entities/admin/TAdminCourse';
-import { useStyles } from './styles';
-
 
 export const AdminCategoryCreate = observer(() => {
-  const { styles } = useStyles();
   const adminCategoryStore = useStore().adminCategory;
 
-  const [ isOpenModal, setIsOpenModal ] = useState(false);
-  const [ messageApi, contextHolder ] = message.useMessage();
-  const [ form ] = Form.useForm();
+  const [isOpenModal, setIsOpenModal] = useState(false);
+  const [messageApi, contextHolder] = message.useMessage();
+  const [form] = Form.useForm();
   const onOpenModal = () => setIsOpenModal(true);
 
   const onCloseModal = () => setIsOpenModal(false);
@@ -26,11 +23,10 @@ export const AdminCategoryCreate = observer(() => {
 
       messageApi.open({
         type: 'success',
-        content: 'Категория создана успешно'
+        content: 'Категория создана успешно',
       });
     }
   };
-
 
   const modalFooter = (
     <Button block type="primary" htmlType="submit" form="form">
@@ -60,53 +56,29 @@ export const AdminCategoryCreate = observer(() => {
           onFinish={onFinish}
           initialValues={{
             minRating: 0,
-            optimalRating: 0
+            optimalRating: 0,
           }}
         >
           <Form.Item
             name="name"
             label="Название"
             required
-            rules={[ requiredValidation ]}
+            rules={[requiredValidation]}
           >
-            <Input maxLength={96}/>
+            <Input maxLength={96} />
           </Form.Item>
 
           <Form.Item
             name="description"
             label="Описание"
             required
-            rules={[ requiredValidation ]}
+            rules={[requiredValidation]}
           >
-            <Input.TextArea/>
+            <Input.TextArea />
           </Form.Item>
 
-          <Form.Item
-            name="photoUrl"
-            label="Ссылка на фото категории"
-          >
-            <Input placeholder="https://example.com"/>
-          </Form.Item>
-
-          <Form.Item
-            name="photoUrl"
-            label="Ссылка на задний фон категории"
-          >
-            <Input placeholder="https://example.com"/>
-          </Form.Item>
-
-          <Form.Item
-            name="minRating"
-            label="Минимальный рейтинг для начала курса"
-          >
-            <InputNumber min={0} className={styles.field}/>
-          </Form.Item>
-
-          <Form.Item
-            name="optimalRating"
-            label="Рекомендуемый рейтинг для начала курса"
-          >
-            <InputNumber min={0} className={styles.field}/>
+          <Form.Item name="photoUrl" label="Ссылка на фото категории">
+            <Input placeholder="https://example.com" />
           </Form.Item>
         </Form>
       </Modal>
