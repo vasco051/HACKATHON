@@ -3,5 +3,6 @@ export const dynamicLinks = {
   courseBoard: (categoryId: number | string, courseId: string | number) => `/categories/${categoryId}/courses/${courseId}`,
 
   // admin
+  adminCategory: (categoryId: number | string) => `/admin/categories/${categoryId}`,
   adminCourse: (categoryId: number | string, courseId: string | number) => `/admin/categories/${categoryId}/courses/${courseId}`
 }

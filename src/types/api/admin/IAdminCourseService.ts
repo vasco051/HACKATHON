@@ -4,6 +4,4 @@ export type TFetchAdminCoursesResponse = {
   courses: TAdminCourse[];
 };
 
-export type TFetchAdminCourseCreateResponse = {
-  course: TAdminCourse;
-};
+export type TFetchAdminCourseCreateResponse = TAdminCourse

@@ -5,6 +5,4 @@ export type TFetchAdminCategoriesResponse = {
   categories: TAdminCategory[]
 }
 
-export type TFetchAdminCategoryCreateResponse = {
-  category: TAdminCategory
-}
+export type TFetchAdminCategoryCreateResponse = TAdminCategory

@@ -1,3 +1,4 @@
+import { IAdminQuestionStore } from './store/admin/IAdminQuestionStore';
 import { IAccountStore } from './store/IAccountStore';
 import { IAuthStore } from './store/IAuthStore.ts';
 import { ICategoryStore } from './store/ICategoryStore';
@@ -19,4 +20,5 @@ export interface IStore {
   // admin
   adminCategory: IAdminCategoryStore;
   adminCourse: IAdminCourseStore;
+  adminQuestion: IAdminQuestionStore;
 }

@@ -13,18 +13,18 @@ class AdminCourseService {
     });
   }
 
-  deleteCourse(categoryId: string | number, courseId: string | number) {
-    return makeRequest<never>({
-      url: `categories/${categoryId}/courses/${courseId}`,
-      method: 'delete',
+  createCourse(categoryId: string | number, course: TAdminCourseCreate) {
+    return makeRequest<TFetchAdminCourseCreateResponse>({
+      url: `categories/${categoryId}/courses`,
+      method: 'post',
+      data: course,
     });
   }
 
-  createCourse(course: TAdminCourseCreate) {
-    return makeRequest<TFetchAdminCourseCreateResponse>({
-      url: `courses`,
-      method: 'post',
-      data: course,
+  deleteCourse(courseId: string | number) {
+    return makeRequest<never>({
+      url: `courses/${courseId}`,
+      method: 'delete',
     });
   }
 }

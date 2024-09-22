@@ -47,9 +47,7 @@ export class AdminCategoryStore implements IAdminCategoryStore {
     const response = await AdminCategoryService.createCategory(category);
 
     if ('data' in response) {
-      const newCategory = response.data.category;
-
-      this.setCategory(newCategory);
+      this.setCategory(response.data);
     }
 
     this.setIsLoading(false);
@@ -57,11 +55,11 @@ export class AdminCategoryStore implements IAdminCategoryStore {
   }
 
 
-  async deleteCategory(id: number | string) {
+  deleteCategory = async (id: number | string) => {
     const response = await AdminCategoryService.deleteCategory(id);
 
-    if (response.status === 200) {
+    if (response.status === 204) {
       this._categories.delete(+id);
     }
-  }
+  };
 }

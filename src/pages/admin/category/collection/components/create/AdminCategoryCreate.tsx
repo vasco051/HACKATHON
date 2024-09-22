@@ -18,12 +18,20 @@ export const AdminCategoryCreate = observer(() => {
   const onFinish = async (values: TAdminCourseCreate) => {
     const response = await adminCategoryStore.createCategory(values);
 
+    console.log(response);
+
     if (response.status === 200) {
       onCloseModal();
 
       messageApi.open({
         type: 'success',
-        content: 'Категория создана успешно',
+        content: 'Категория создана успешно'
+      });
+    }
+    else {
+      messageApi.open({
+        type: 'error',
+        content: 'Проверьте данные'
       });
     }
   };
@@ -77,7 +85,21 @@ export const AdminCategoryCreate = observer(() => {
             <Input.TextArea />
           </Form.Item>
 
-          <Form.Item name="photoUrl" label="Ссылка на фото категории">
+          <Form.Item
+            name="photoUrl"
+            label="Ссылка на фото категории"
+            required
+            rules={[requiredValidation]}
+          >
+            <Input placeholder="https://example.com" />
+          </Form.Item>
+
+          <Form.Item
+            name="backgroundUrl"
+            label="Ссылка на задний фон категории"
+            required
+            rules={[requiredValidation]}
+          >
             <Input placeholder="https://example.com" />
           </Form.Item>
         </Form>
