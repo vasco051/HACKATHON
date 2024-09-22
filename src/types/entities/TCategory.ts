@@ -3,4 +3,5 @@ export type TCategory = {
   name: string;
   description: string;
   photoUrl: string;
-}
+  backgroundUrl: string | null;
+};
