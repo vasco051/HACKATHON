@@ -21,4 +21,8 @@ export const useStyles = createStyles(({ css }) => ({
     width: 100px;
     aspect-ratio: 1;
   `,
+
+  finished: css`
+    opacity: 0;
+  `,
 }));

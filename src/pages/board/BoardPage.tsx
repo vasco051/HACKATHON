@@ -7,6 +7,7 @@ import { BoardProgress } from '../../components/ui/board/board-progress/BoardPro
 import { Question } from '../../components/ui/board/question/Question.tsx';
 import { Timer } from '../../components/ui/board/timer/Timer.tsx';
 import { questionList, TAnswer } from './question.ts';
+import { cx } from 'antd-style';
 
 const { Title } = Typography;
 
@@ -66,7 +67,10 @@ export const BoardPage = () => {
         </Flex>
       )}
 
-      <Timer onFinish={makeNextQuestion} />
+      <Timer
+        className={cx(currentQuestion === 10 && styles.finished)}
+        onFinish={makeNextQuestion}
+      />
     </PageWrapper>
   );
 };

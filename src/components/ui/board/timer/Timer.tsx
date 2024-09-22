@@ -4,9 +4,10 @@ import { useEffect, useState } from 'react';
 interface ITimerProps {
   seconds?: number;
   onFinish: () => void;
+  className?: string;
 }
 
-export const Timer = ({ seconds = 5, onFinish }: ITimerProps) => {
+export const Timer = ({ seconds = 7, onFinish, className }: ITimerProps) => {
   const [duration, setDuration] = useState(seconds * 1000);
   const percent = 100 - (duration / (seconds * 1000)) * 100;
 
@@ -25,7 +26,7 @@ export const Timer = ({ seconds = 5, onFinish }: ITimerProps) => {
     }, 10);
 
     return () => clearInterval(interval);
-  }, [duration, onFinish]);
+  }, [duration]);
 
   const formatTime = () => {
     const seconds = Math.floor(duration / 1000);
@@ -35,6 +36,7 @@ export const Timer = ({ seconds = 5, onFinish }: ITimerProps) => {
 
   return (
     <Progress
+      className={className}
       type="circle"
       percent={percent}
       status="active"

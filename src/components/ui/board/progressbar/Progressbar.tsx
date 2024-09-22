@@ -14,5 +14,5 @@ export const Progressbar = ({ questionNumber }: IBoardProgress) => {
     setPercent(calculatedPercent);
   }, [questionNumber]);
 
-  return <Progress percent={percent} type="line" />;
+  return <Progress percent={percent} type="line" showInfo={false} />;
 };
