@@ -3,4 +3,5 @@ export type TAccount = {
   isTeacher: boolean,
   login: string;
   nickname: string
+  pts: number
 }
