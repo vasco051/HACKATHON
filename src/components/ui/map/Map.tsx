@@ -1,11 +1,8 @@
-import { useParams } from 'react-router-dom';
-import { CSSProperties, useEffect } from 'react';
+import { CSSProperties } from 'react';
 import { observer } from 'mobx-react-lite';
 import { theme } from 'antd';
 import { ArcherContainer, ArcherElement } from 'react-archer';
 import defaultBg from '../../../assets/images/img_map-pattern.png';
-
-import { useStore } from '../../../hooks/useStore.ts';
 import { MapCard } from './card/MapCard';
 
 import {
