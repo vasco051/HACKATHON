@@ -45,7 +45,7 @@ export const Header = observer(() => {
   }
 
   const onLogout = () => {
-    authStore.logout;
+    authStore.logout();
     navigate(staticLinks.authorization);
   };
 
