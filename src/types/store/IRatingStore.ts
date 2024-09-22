@@ -5,5 +5,5 @@ export interface IRatingStore {
   userRating: TRating;
   ratings: readonly TRating[];
 
-  fetchRatings: () => void;
+  fetchRatings: (categoryId: string | number) => void;
 }

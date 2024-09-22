@@ -38,4 +38,13 @@ export class CategoryStore implements ICategoryStore {
 
     this.setIsLoading(false);
   }
+
+  async fetchCategory(id: number | string) {
+    this.setIsLoading(true);
+    this._categories.clear();
+
+    const response = await CategoryService.fetchCategory(id);
+
+    this.setIsLoading(false);
+  }
 }

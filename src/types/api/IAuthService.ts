@@ -11,6 +11,4 @@ export type TFetchRegisterResponse = {
   profile: TAccount
 }
 
-export type TFetchProfileResponse = {
-  profile: TAccount
-}
+export type TFetchProfileResponse = TAccount

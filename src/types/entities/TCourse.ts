@@ -3,4 +3,7 @@ export type TCourse = {
   name: string;
   description: string
   photoUrl: string
+  isAwailable: boolean
+  minRating: number;
+  optimalRating: number
 }

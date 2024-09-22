@@ -32,11 +32,11 @@ export class RatingStore implements IRatingStore {
     this._userRating = userRating;
   }
 
-  async fetchRatings() {
+  async fetchRatings(categoryId: string | number) {
     this.setIsLoading(true);
     this._ratings.clear();
 
-    const response = await RatingService.fetchRatings();
+    const response = await RatingService.fetchRatings(categoryId);
 
     if ('data' in response) {
       this.setUserRating(response.data.you);

@@ -16,10 +16,10 @@ const {
 } = Typography;
 
 export const RegistrationPage = observer(() => {
-  const { styles } = useStyles();
+  const {styles} = useStyles();
   const authStore = useStore().auth;
   const navigate = useNavigate();
-  const [ form ] = Form.useForm();
+  const [form] = Form.useForm();
 
   const onFinish = async (values: TRegistration) => {
     const response = await authStore.registration(values);
@@ -51,15 +51,15 @@ export const RegistrationPage = observer(() => {
             className={styles.form}
           >
             <Form.Item label="Логин" name="login">
-              <Input />
+              <Input/>
             </Form.Item>
 
             <Form.Item label="Пароль" name="password">
-              <Input />
+              <Input type='passoword'/>
             </Form.Item>
 
             <Form.Item label="Никнейм" name="nickname">
-              <Input />
+              <Input/>
             </Form.Item>
 
             <Button

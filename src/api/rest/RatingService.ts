@@ -4,11 +4,12 @@ import { TFetchRatingResponse } from '../../types/api/IRatingService.ts';
 
 
 class RatingService {
-  fetchRatings() {
+  fetchRatings(categoryId: string | number) {
     return makeRequest<TFetchRatingResponse>({
-      url: `categories/1/top`
+      url: `categories/${categoryId}/top`
     });
   }
 }
 
 export default new RatingService();
+ 

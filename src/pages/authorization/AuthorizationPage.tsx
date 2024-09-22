@@ -16,10 +16,10 @@ const {
 } = Typography;
 
 export const AuthorizationPage = observer(() => {
-  const { styles } = useStyles();
+  const {styles} = useStyles();
   const authStore = useStore().auth;
   const navigate = useNavigate();
-  const [ form ] = Form.useForm();
+  const [form] = Form.useForm();
 
   const onFinish = async (values: TSignIn) => {
     const response = await authStore.signIn(values);
@@ -49,11 +49,11 @@ export const AuthorizationPage = observer(() => {
             className={styles.form}
           >
             <Form.Item label="Логин" name="login">
-              <Input />
+              <Input/>
             </Form.Item>
 
             <Form.Item label="Пароль" name="password">
-              <Input />
+              <Input type='password'/>
             </Form.Item>
 
             <Button

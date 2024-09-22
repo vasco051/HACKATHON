@@ -1,6 +1,6 @@
 import { makeAutoObservable } from 'mobx';
 import AuthService from '../api/rest/AuthService';
-import { TSignIn, TRegistration } from '../types/entities/TSignIn';
+import { TRegistration, TSignIn } from '../types/entities/TSignIn';
 import { IStore } from '../types/IStore';
 import { IAuthStore } from '../types/store/IAuthStore';
 
@@ -56,13 +56,12 @@ export class AuthStore implements IAuthStore {
 
   async checkAuth() {
     this.setLoading(true);
-    const response = await AuthService.phofile();
+    const response = await AuthService.profile();
 
     if ('data' in response) {
       this.setAuth(true);
-      this.rootStore.account.setAccount(response.data.profile);
-    }
-    else {
+      this.rootStore.account.setAccount(response.data);
+    } else {
       this.setAuth(false);
       this.rootStore.account.setAccount(null);
       localStorage.clear();
@@ -71,9 +70,9 @@ export class AuthStore implements IAuthStore {
     this.setLoading(false);
   }
 
-  // logout() {
-  //   AuthService.logout();
-  //   localStorage.clear();
-  //   this.rootStore.account = null;
-  // }
+  logout = () => {
+    this.setAuth(false)
+    this.rootStore.account.setAccount(null);
+    localStorage.clear();
+  }
 }

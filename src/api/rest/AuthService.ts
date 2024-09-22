@@ -20,7 +20,7 @@ class AuthService {
     });
   }
 
-  phofile() {
+  profile() {
     return makeRequest<TFetchProfileResponse>({
       url: `auth/profile`,
     });

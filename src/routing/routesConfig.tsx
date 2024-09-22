@@ -4,23 +4,25 @@ import { RegistrationPage } from '../pages/registration/RegistrationPage';
 import { MainPage } from '../pages/main/MainPage';
 import { CategoryPage } from '../pages/category/CategoryPage';
 import { BoardPage } from '../pages/board/BoardPage.tsx';
+import { AdminCategoriesPage } from "../pages/admin/category/collection/AdminCategoriesPage.tsx";
+import { AdminCategoryPage } from "../pages/admin/category/_/AdminCategoryPage.tsx";
 
-export const publicRoutes = [
+export const authorizedRoutes = [
   {
     path: '*',
-    element: <AuthorizationPage />,
+    element: <AuthorizationPage/>,
   },
   {
     path: staticLinks.authorization,
-    element: <AuthorizationPage />,
+    element: <AuthorizationPage/>,
   },
   {
     path: staticLinks.registration,
-    element: <RegistrationPage />,
+    element: <RegistrationPage/>,
   },
 ];
 
-export const privateRoutes = [
+export const unauthorizedRoutes = [
   {
     path: '*',
     element: <MainPage/>
@@ -37,4 +39,15 @@ export const privateRoutes = [
     path: staticLinks.courseBoard,
     element: <BoardPage/>
   }
+];
+
+export const adminRoutes = [
+  {
+    path: staticLinks.adminCategories,
+    element: <AdminCategoriesPage/>
+  },
+  {
+    path: staticLinks.adminCategory,
+    element: <AdminCategoryPage/>
+  },
 ];
